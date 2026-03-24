@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GuitarStore</string>
+    <string name="search_hint">Поиск гитар…</string>
+    <string name="filter">Фильтры</string>
+    <string name="add_guitar">Добавить гитару</string>
+    <string name="no_guitars">Гитары не найдены</string>
+    <string name="in_stock">В наличии</string>
+    <string name="out_of_stock">Нет в наличии</string>
+</resources>

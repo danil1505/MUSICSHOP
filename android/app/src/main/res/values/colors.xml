@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Burgundy primary -->
+    <color name="color_primary">#7B1C2E</color>
+    <color name="color_primary_dark">#5C0F1F</color>
+    <color name="color_primary_container">#F9DCE1</color>
+
+    <!-- Gold accent -->
+    <color name="color_gold">#C9A84C</color>
+
+    <!-- Surface / Background -->
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_background">#F5F0F1</color>
+    <color name="color_on_surface">#1C1B1F</color>
+    <color name="color_dark">#1C1B1F</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Stock indicators -->
+    <color name="color_in_stock">#2E7D32</color>
+    <color name="color_out_of_stock">#C62828</color>
+
+    <!-- Card -->
+    <color name="color_card">#FFFFFF</color>
+    <color name="color_divider">#E0E0E0</color>
+</resources>

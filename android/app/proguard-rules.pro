@@ -1,0 +1,6 @@
+-keep class com.guitarstore.model.** { *; }
+-keep class com.guitarstore.api.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*
+-dontwarn okhttp3.**
+-dontwarn retrofit2.**
