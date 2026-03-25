@@ -1,90 +1,94 @@
 [
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/layout_activity_detail.xml.flat",
-        "source": "com.guitarstore.app-main-44:/layout/activity_detail.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/drawable_ic_guitar_placeholder.xml.flat",
-        "source": "com.guitarstore.app-main-44:/drawable/ic_guitar_placeholder.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.guitarstore.app-main-44:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\layout_bottom_sheet_filter.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\bottom_sheet_filter.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\layout_activity_detail.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\activity_detail.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/drawable_ic_back.xml.flat",
-        "source": "com.guitarstore.app-main-44:/drawable/ic_back.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\layout_activity_add_edit.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\activity_add_edit.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-xxxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\menu_menu_main.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\menu\\menu_main.xml"
     },
     {
         "merged": "com.guitarstore.app-debug-42:/layout_bottom_sheet_filter.xml.flat",
         "source": "com.guitarstore.app-main-44:/layout/bottom_sheet_filter.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/layout_activity_main.xml.flat",
-        "source": "com.guitarstore.app-main-44:/layout/activity_main.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/layout_activity_add_edit.xml.flat",
-        "source": "com.guitarstore.app-main-44:/layout/activity_add_edit.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.guitarstore.app-main-44:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\layout_item_guitar.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\item_guitar.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/menu_menu_main.xml.flat",
-        "source": "com.guitarstore.app-main-44:/menu/menu_main.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\drawable_ic_guitar_placeholder.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\drawable\\ic_guitar_placeholder.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.guitarstore.app-main-44:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "com.guitarstore.app-debug-42:/layout_item_guitar.xml.flat",
-        "source": "com.guitarstore.app-main-44:/layout/item_guitar.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-debug-42:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\mipmap-xxxhdpi\\ic_launcher.webp"
     }
 ]

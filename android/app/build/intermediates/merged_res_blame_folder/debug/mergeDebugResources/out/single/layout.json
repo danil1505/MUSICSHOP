@@ -1,22 +1,26 @@
 [
     {
-        "merged": "com.guitarstore.app-mergeDebugResources-41:/layout/item_guitar.xml",
-        "source": "com.guitarstore.app-main-44:/layout/item_guitar.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-mergeDebugResources-41:\\layout\\activity_add_edit.xml",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\activity_add_edit.xml"
     },
     {
-        "merged": "com.guitarstore.app-mergeDebugResources-41:/layout/activity_detail.xml",
-        "source": "com.guitarstore.app-main-44:/layout/activity_detail.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-mergeDebugResources-41:\\layout\\bottom_sheet_filter.xml",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\bottom_sheet_filter.xml"
     },
     {
-        "merged": "com.guitarstore.app-mergeDebugResources-41:/layout/activity_add_edit.xml",
-        "source": "com.guitarstore.app-main-44:/layout/activity_add_edit.xml"
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-mergeDebugResources-41:\\layout\\item_guitar.xml",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\item_guitar.xml"
+    },
+    {
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-mergeDebugResources-41:\\layout\\activity_detail.xml",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-mergeDebugResources-41:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\dilka\\.gradle\\daemon\\8.6\\com.guitarstore.app-main-44:\\layout\\activity_main.xml"
     },
     {
         "merged": "com.guitarstore.app-mergeDebugResources-41:/layout/bottom_sheet_filter.xml",
         "source": "com.guitarstore.app-main-44:/layout/bottom_sheet_filter.xml"
-    },
-    {
-        "merged": "com.guitarstore.app-mergeDebugResources-41:/layout/activity_main.xml",
-        "source": "com.guitarstore.app-main-44:/layout/activity_main.xml"
     }
 ]
