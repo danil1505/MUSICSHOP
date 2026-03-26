@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migrate
+  namespace: guitarstore
+spec:
+  template:
+    spec:
+      containers:
+        - name: migrate
+          image: guitarstore-backend:latest
+          imagePullPolicy: IfNotPresent
+          command: ["python", "manage.py", "migrate"]
+          envFrom:
+            - configMapRef:
+                name: guitarstore-config
+            - secretRef:
+                name: guitarstore-secret
+      restartPolicy: OnFailure
+  backoffLimit: 3

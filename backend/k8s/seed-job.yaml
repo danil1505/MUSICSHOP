@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: seed-data
+  namespace: guitarstore
+spec:
+  template:
+    spec:
+      containers:
+        - name: seed-data
+          image: guitarstore-backend:latest
+          imagePullPolicy: IfNotPresent
+          command: ["python", "scripts/seed_data.py", "1000000", "5000"]
+          envFrom:
+            - configMapRef:
+                name: guitarstore-config
+            - secretRef:
+                name: guitarstore-secret
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+      restartPolicy: OnFailure
+  backoffLimit: 3
