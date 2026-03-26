@@ -40,7 +40,15 @@ class AddEditViewModel : ViewModel() {
     fun save(id: String?, name: String, brandId: Int, categoryId: Int,
              price: Double, description: String?, imageUrl: String?, inStock: Boolean) {
         _loading.value = true
-        val req = GuitarRequest(name, brandId, categoryId, price, description, imageUrl, inStock)
+        val req = GuitarRequest(
+            name = name,
+            brand = brandId,
+            category = categoryId,
+            price = price,
+            description = description,
+            image_url = imageUrl,
+            in_stock = inStock
+        )
         viewModelScope.launch {
             try {
                 val resp = if (id == null) repo.createGuitar(req)

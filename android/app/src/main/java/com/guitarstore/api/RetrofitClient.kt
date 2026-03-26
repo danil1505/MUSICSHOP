@@ -14,9 +14,16 @@ object RetrofitClient {
             level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
                     else HttpLoggingInterceptor.Level.NONE
         })
-        .connectTimeout(15, TimeUnit.SECONDS)
-        .readTimeout(30,    TimeUnit.SECONDS)
-        .writeTimeout(30,   TimeUnit.SECONDS)
+        .addInterceptor { chain ->
+            // Добавляем заголовок Accept для Django REST
+            val request = chain.request().newBuilder()
+                .addHeader("Accept", "application/json")
+                .build()
+            chain.proceed(request)
+        }
+        .connectTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(60,    TimeUnit.SECONDS)
+        .writeTimeout(60,   TimeUnit.SECONDS)
         .build()
 
     val api: GuitarApi by lazy {
