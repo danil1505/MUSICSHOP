@@ -42,7 +42,7 @@ class MainViewModel : ViewModel() {
         if (!reset && currentPage >= totalPages) return
 
         if (reset) {
-            currentPage = 0
+            currentPage = 1  // Django pagination starts from 1
             totalPages  = 1
             _guitars.value = emptyList()
         }
@@ -64,7 +64,7 @@ class MainViewModel : ViewModel() {
                     val body = resp.body()!!
                     totalPages = body.totalPages
                     val existing = if (reset) emptyList() else _guitars.value ?: emptyList()
-                    _guitars.value = existing + body.content
+                    _guitars.value = existing + body.results  // Django uses 'results' not 'content'
                     currentPage++
                 } else {
                     _error.value = "Ошибка: ${resp.code()}"

@@ -9,8 +9,8 @@ class GuitarRepository {
 
     suspend fun getGuitars(
         search: String? = null, brand: Int? = null, category: Int? = null,
-        minPrice: Double? = null, maxPrice: Double? = null, page: Int = 0
-    ) = api.getGuitars(search, brand, category, minPrice, maxPrice, page)
+        minPrice: Double? = null, maxPrice: Double? = null, page: Int = 1
+    ) = api.getGuitars(search, brand, category, minPrice, maxPrice, page, 20)
 
     suspend fun getGuitar(id: String)                        = api.getGuitar(id)
     suspend fun createGuitar(req: GuitarRequest)             = api.createGuitar(req)

@@ -1,6 +1,6 @@
 # 🎸 GuitarStore — Мобильное приложение для магазина гитар
 
-Учебный проект — полноценное Android-приложение для музыкального магазина с подключением к REST API и базой данных PostgreSQL.
+Полноценный fullstack-проект: Android-приложение + Django REST API + PostgreSQL с поддержкой 1 000 000 записей, Docker и Kubernetes.
 
 ---
 
@@ -8,63 +8,64 @@
 
 ```
 MUSICSHOP/
-├── guitar-store-api/     ← Бэкенд (Spring Boot, Java)
+├── backend/              ← Бэкенд (Django REST Framework, Python)
 └── android/              ← Фронтенд (Android, Kotlin)
 ```
 
-### 🖥️ Бэкенд — `guitar-store-api/`
-REST API сервер на Spring Boot. Обрабатывает запросы от приложения, работает с базой данных PostgreSQL.
+### 🐍 Бэкенд — `backend/`
+
+REST API сервер на Django REST Framework. Поддержка полнотекстового поиска, фильтрации, пагинации.
 
 ```
-guitar-store-api/
-└── src/main/java/com/guitarstore/guitar_store_api/
-    ├── controller/
-    │   ├── GuitarController.java       — эндпоинты для гитар (CRUD)
-    │   └── ReferenceController.java    — эндпоинты для брендов и категорий
-    ├── service/
-    │   └── GuitarService.java          — бизнес-логика
-    ├── repository/
-    │   ├── GuitarRepository.java       — SQL запросы с фильтрацией
-    │   ├── BrandRepository.java
-    │   └── CategoryRepository.java
-    ├── model/
-    │   ├── Guitar.java                 — сущность гитары
-    │   ├── Brand.java                  — сущность бренда
-    │   └── Category.java               — сущность категории
-    ├── dto/
-    │   ├── GuitarDto.java              — DTO для ответа
-    │   └── GuitarRequest.java          — DTO для создания/обновления
-    └── config/
-        └── GlobalExceptionHandler.java — обработка ошибок
+backend/
+├── config/
+│   ├── settings.py           — настройки Django
+│   ├── urls.py               — корневые URL
+│   └── wsgi.py               — WSGI конфигурация
+├── store/
+│   ├── models.py             — модели (Brand, Category, Guitar)
+│   ├── serializers.py        — DRF сериализаторы
+│   ├── views.py              — ViewSets для API
+│   ├── urls.py               — маршруты API
+│   └── admin.py              — настройки Django Admin
+├── scripts/
+│   └── seed_data.py          — генерация 1 000 000 записей
+├── k8s/                      — Kubernetes манифесты
+├── Dockerfile                — Docker образ
+├── docker-compose.yml        — Docker Compose
+└── requirements.txt          — Python зависимости
 ```
 
 ### 📱 Фронтенд — `android/`
-Android-приложение на Kotlin. Отображает список гитар, поддерживает поиск, фильтрацию, добавление и редактирование.
+
+Android-приложение на Kotlin. Отображает список гитар, поддерживает поиск, фильтрацию, CRUD операции.
 
 ```
-android/app/src/main/java/com/guitarstore/
-├── ui/
-│   ├── main/
-│   │   ├── MainActivity.kt         — главный экран со списком гитар
-│   │   └── FilterBottomSheet.kt    — диалог фильтрации
-│   ├── detail/
-│   │   └── DetailActivity.kt       — карточка товара
-│   └── addedit/
-│       └── AddEditActivity.kt      — форма добавления/редактирования
-├── viewmodel/
-│   ├── MainViewModel.kt            — логика главного экрана
-│   └── AddEditViewModel.kt         — логика формы
-├── adapter/
-│   └── GuitarAdapter.kt            — адаптер RecyclerView
-├── repository/
-│   └── GuitarRepository.kt         — запросы к API
-├── api/
-│   ├── GuitarApi.kt                — Retrofit интерфейс
-│   └── RetrofitClient.kt           — HTTP клиент
-├── model/
-│   └── Models.kt                   — модели данных
-└── glide/
-    └── GlideModule.kt              — настройка загрузки картинок
+android/
+├── app/
+│   ├── src/main/java/com/guitarstore/
+│   │   ├── ui/
+│   │   │   ├── main/
+│   │   │   │   ├── MainActivity.kt       — главный экран
+│   │   │   │   └── FilterBottomSheet.kt  — диалог фильтрации
+│   │   │   ├── detail/
+│   │   │   │   └── DetailActivity.kt     — карточка товара
+│   │   │   └── addedit/
+│   │   │       └── AddEditActivity.kt    — форма CRUD
+│   │   ├── viewmodel/
+│   │   │   ├── MainViewModel.kt
+│   │   │   └── AddEditViewModel.kt
+│   │   ├── adapter/
+│   │   │   └── GuitarAdapter.kt
+│   │   ├── repository/
+│   │   │   └── GuitarRepository.kt
+│   │   ├── api/
+│   │   │   ├── GuitarApi.kt
+│   │   │   └── RetrofitClient.kt
+│   │   └── model/
+│   │       └── Models.kt
+│   └── build.gradle
+└── BACKEND_INTEGRATION.md    — документация интеграции
 ```
 
 ---
@@ -74,13 +75,15 @@ android/app/src/main/java/com/guitarstore/
 ### Бэкенд
 | Технология | Версия | Назначение |
 |---|---|---|
-| Java | 17 | Язык программирования |
-| Spring Boot | 3.5.12 | Фреймворк |
-| Spring Data JPA | — | Работа с БД |
+| Python | 3.12 | Язык программирования |
+| Django | 5.0.6 | Веб-фреймворк |
+| Django REST Framework | 3.15.1 | REST API |
 | PostgreSQL | 17 | База данных |
-| HikariCP | — | Пул соединений |
-| Lombok | — | Упрощение кода |
-| Maven | — | Сборка проекта |
+| WhiteNoise | 6.6.0 | Раздача статики |
+| Gunicorn | 22.0.0 | WSGI сервер |
+| Faker | 25.0.1 | Генерация данных |
+| Docker | — | Контейнеризация |
+| Kubernetes | — | Оркестрация |
 
 ### Фронтенд (Android)
 | Технология | Версия | Назначение |
@@ -100,162 +103,136 @@ android/app/src/main/java/com/guitarstore/
 ## 🗄️ База данных
 
 **СУБД:** PostgreSQL 17  
-**Название БД:** `guitarstore`
+**База данных:** `guitarstore`
 
 ### Таблицы
 | Таблица | Описание |
 |---|---|
-| `brands` | Бренды гитар (Gibson, Fender, Yamaha и др.) |
-| `categories` | Категории (электрогитара, акустическая, бас и др.) |
-| `guitars` | Основная таблица — 500 записей с гитарами |
+| `brands` | 15 брендов (Gibson, Fender, Yamaha, Ibanez, ESP...) |
+| `categories` | 6 категорий (электрогитара, акустическая, бас...) |
+| `guitars` | **1 000 000 записей** с полнотекстовым поиском |
 
 ### Особенности
-- Полнотекстовый поиск через `tsvector` и `plainto_tsquery`
-- Индексы на `brand_id`, `category_id`, `price` для быстрой фильтрации
-- Триггер автообновления `search_vector` при изменении данных
+- Полнотекстовый поиск через `tsvector` + GIN индекс
+- Индексы на `brand_id`, `category_id`, `price`
+- UUID для первичных ключей
+- CHECK constraint на `price > 0`
 
 ---
 
-## 🚀 Запуск проекта
+## 🚀 Быстрый запуск (Docker)
 
 ### Требования
-- Java 17
-- PostgreSQL 17
-- PgAdmin 4
+- Docker Desktop
 - Android Studio
-- Android телефон или эмулятор (API 26+)
+- Android эмулятор или устройство (API 26+)
 
 ---
 
-### Шаг 1 — Настройка базы данных
+### 1️⃣ Запуск бэкенда
 
-**1.** Открой PgAdmin 4
-
-**2.** Создай базу данных:
-```
-ПКМ на Databases → Create → Database → имя: guitarstore
+```bash
+cd MUSICSHOP/backend
+docker-compose up -d
 ```
 
-**3.** Открой Query Tool и выполни SQL скрипт для создания таблиц и заполнения данными:
-```
-Tools → Query Tool → File → Open → full_setup.sql → F5
-```
-
-**4.** Проверь что всё создалось:
-```sql
-SELECT COUNT(*) FROM guitars; -- должно быть 500
-```
+**Проверка:**
+- http://localhost:8000/api/guitars/ — API
+- http://localhost:8000/admin/ — Admin (логин: `admin`, пароль: `admin`)
+- http://localhost:8000/api/docs/ — Swagger документация
 
 ---
 
-### Шаг 2 — Запуск бэкенда
+### 2️⃣ Генерация тестовых данных (1 000 000 записей)
 
-**1.** Открой папку `guitar-store-api` в IntelliJ IDEA
-
-**2.** Настрой подключение к БД в файле:
-```
-src/main/resources/application.properties
+```bash
+docker-compose run seed
 ```
 
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/guitarstore
-spring.datasource.username=postgres
-spring.datasource.password=ВАШ_ПАРОЛЬ
-```
-
-**3.** Запусти `GuitarStoreApplication.java` → правой кнопкой → **Run**
-
-**4.** Проверь что бэкенд работает — открой в браузере:
-```
-http://localhost:8080/guitars
-http://localhost:8080/brands
-http://localhost:8080/categories
-```
+⏱ ~140 секунд (~7300 записей/сек)
 
 ---
 
-### Шаг 3 — Запуск Android приложения
+### 3️⃣ Запуск Android приложения
 
-**1.** Открой папку `android` в Android Studio
+#### Для эмулятора:
 
-**2.** Укажи IP компьютера в `app/build.gradle`:
-```gradle
-// Для эмулятора:
-buildConfigField 'String', 'BASE_URL', '"http://10.0.2.2:8080/"'
+1. Открой `android/` в Android Studio
+2. **Sync Gradle**
+3. **Run ▶** (эмулятор автоматически подключится к `10.0.2.2:8000`)
 
-// Для реального телефона (замени на свой IP):
-buildConfigField 'String', 'BASE_URL', '"http://192.168.X.X:8080/"'
-```
+#### Для физического устройства:
 
-**3.** Узнай IP компьютера:
-```cmd
+**1.** Узнать IP компьютера:
+```bash
 ipconfig
-```
-Найди **IPv4-адрес** в разделе WiFi или Ethernet.
-
-**4.** Синхронизируй проект:
-```
-File → Sync Project with Gradle Files
+# Найдите IPv4 в разделе "Беспроводная сеть" (например, 192.168.1.100)
 ```
 
-**5.** Подключи телефон по USB (включи отладку по USB в настройках разработчика)
+**2.** Обновить `android/app/build.gradle`:
+```gradle
+buildConfigField 'String', 'BASE_URL', '"http://192.168.1.100:8000/api/"'
+```
 
-**6.** Нажми **Run ▶**
+**3.** Разрешить порт в брандмауэре (PowerShell от администратора):
+```bash
+New-NetFirewallRule -DisplayName "Django Backend" -Direction Inbound -LocalPort 8000 -Protocol TCP -Action Allow
+```
+
+**4.** Включить отладку по USB на телефоне → подключить → **Run ▶**
 
 ---
 
 ## 📡 API эндпоинты
 
-| Метод | URL | Описание |
+| Метод | Endpoint | Описание |
 |---|---|---|
-| GET | `/guitars` | Список гитар с фильтрацией и пагинацией |
-| GET | `/guitars/{id}` | Карточка гитары |
-| POST | `/guitars` | Добавить гитару |
-| PUT | `/guitars/{id}` | Обновить гитару |
-| DELETE | `/guitars/{id}` | Удалить гитару |
-| GET | `/brands` | Список брендов |
-| GET | `/categories` | Список категорий |
+| GET | `/api/guitars/` | Список гитар с пагинацией |
+| GET | `/api/guitars/{id}/` | Детали гитары |
+| POST | `/api/guitars/` | Создать гитару |
+| PUT | `/api/guitars/{id}/` | Обновить гитару |
+| DELETE | `/api/guitars/{id}/` | Удалить гитару |
+| GET | `/api/brands/` | Список брендов (15) |
+| GET | `/api/categories/` | Список категорий (6) |
 
-### Параметры фильтрации для GET /guitars
+### Параметры фильтрации для GET /api/guitars/
+
 ```
-?search=Gibson        — полнотекстовый поиск
-&brand=1              — фильтр по бренду (id)
-&category=1           — фильтр по категории (id)
-&minPrice=10000       — минимальная цена
-&maxPrice=100000      — максимальная цена
-&page=0               — номер страницы (с 0)
-&size=20              — количество на странице
+?search=Fender          — полнотекстовый поиск
+&brand=2                — фильтр по бренду (id)
+&category=1             — фильтр по категории (id)
+&minPrice=50000         — минимальная цена
+&maxPrice=150000        — максимальная цена
+&page=1                 — номер страницы (начинается с 1)
+&page_size=20           — размер страницы
 ```
 
 ### Пример запроса
-```
-GET http://localhost:8080/guitars?search=Gibson&minPrice=50000&page=0&size=20
+```bash
+curl "http://localhost:8000/api/guitars/?search=Fender&minPrice=50000&maxPrice=150000&page=1"
 ```
 
 ### Пример ответа
 ```json
 {
-  "content": [
+  "count": 19587,
+  "next": "http://.../api/guitars/?page=2",
+  "previous": null,
+  "results": [
     {
-      "id": "uuid",
-      "name": "Gibson Les Paul Standard",
-      "brandId": 1,
-      "brandName": "Gibson",
-      "categoryId": 1,
-      "categoryName": "Электрогитара",
-      "price": 145000.00,
+      "id": "uuid-string",
+      "name": "Fender Stratocaster",
+      "brand": 2,
+      "brand_name": "Fender",
+      "category": 1,
+      "category_name": "Электрогитара",
+      "price": "150000.00",
       "description": "...",
-      "imageUrl": "https://...",
-      "inStock": true,
-      "createdAt": "2026-01-01T00:00:00Z"
+      "image_url": "https://...",
+      "in_stock": true,
+      "created_at": "2026-03-26T10:00:00Z"
     }
-  ],
-  "page": {
-    "size": 20,
-    "number": 0,
-    "totalElements": 500,
-    "totalPages": 25
-  }
+  ]
 }
 ```
 
@@ -265,18 +242,19 @@ GET http://localhost:8080/guitars?search=Gibson&minPrice=50000&page=0&size=20
 
 | Экран | Файл | Описание |
 |---|---|---|
-| Список гитар | `MainActivity.kt` | Главный экран, поиск, фильтры, пагинация |
-| Карточка товара | `DetailActivity.kt` | Детальная информация, кнопки редактирования и удаления |
+| Список гитар | `MainActivity.kt` | Поиск, фильтры, пагинация, pull-to-refresh |
+| Карточка товара | `DetailActivity.kt` | Детали, редактирование, удаление |
 | Добавление/редактирование | `AddEditActivity.kt` | Форма с валидацией |
-| Фильтры | `FilterBottomSheet.kt` | Выбор бренда, категории, диапазона цены |
+| Фильтры | `FilterBottomSheet.kt` | Бренд, категория, цена |
 
 ---
 
 ## 🎨 Дизайн
 
-- **Material Components** (тема MaterialComponents.DayNight)
+- **Material Components** (DayNight тема)
 - Цвета: тёмно-бордовый `#7B1C2E` + золотой `#C9A84C`
-- Карточки с закруглёнными углами
+- CardView с закруглёнными углами
+- Shimmer эффект загрузки
 - Поддержка светлой и тёмной темы
 
 ---
@@ -285,10 +263,178 @@ GET http://localhost:8080/guitars?search=Gibson&minPrice=50000&page=0&size=20
 
 ### Бэкенд
 ```
-Controller → Service → Repository → PostgreSQL
+ViewSet → Serializer → Model → PostgreSQL
+              ↓
+         WhiteNoise (статика)
 ```
 
 ### Android (MVVM)
 ```
-Activity/Fragment → ViewModel → Repository → Retrofit API → Backend
+Activity → ViewModel → Repository → Retrofit → Backend
+             ↓
+         LiveData
 ```
+
+---
+
+## 🐳 Docker
+
+### Запуск
+```bash
+cd backend
+docker-compose up -d
+```
+
+### Сервисы
+| Сервис | Порт | Описание |
+|---|---|---|
+| `db` | 5433 | PostgreSQL 17 |
+| `web` | 8000 | Django + Gunicorn |
+| `seed` | — | Генерация 1M записей |
+
+### Команды
+```bash
+# Просмотр логов
+docker logs -f backend-web-1
+
+# Остановка
+docker-compose down
+
+# Остановка + удаление БД
+docker-compose down -v
+
+# Перезапуск
+docker-compose restart
+```
+
+---
+
+## ☸️ Kubernetes
+
+### Развёртывание
+
+```bash
+# Включить Kubernetes в Docker Desktop Settings → Kubernetes → Enable
+
+# Применить манифесты
+kubectl apply -k backend/k8s/
+
+# Проверить статус
+kubectl get all -n guitarstore
+
+# Пробросить порт
+kubectl port-forward -n guitarstore svc/backend-service 8000:80
+
+# Запустить генерацию данных
+kubectl apply -f backend/k8s/seed-job.yaml
+```
+
+### Компоненты
+| Ресурс | Описание |
+|---|---|
+| Namespace | `guitarstore` |
+| Deployment | backend (3 реплики), postgres |
+| Service | backend-service, postgres-service |
+| HPA | автомасштабирование 3-10 реплик |
+| Job | миграции, генерация данных |
+| Ingress | внешний доступ через nginx |
+
+📖 **Подробно:** [`backend/k8s/README.md`](backend/k8s/README.md)
+
+---
+
+## 🧪 Тестирование API
+
+### Проверка количества записей
+```bash
+curl -s http://localhost:8000/api/guitars/ | python -c "import sys,json; d=json.load(sys.stdin); print(f'Записей: {d[\"count\"]:,}')"
+```
+
+### Поиск с фильтром
+```bash
+curl "http://localhost:8000/api/guitars/?search=Gibson&minPrice=100000"
+```
+
+### Swagger UI
+Откройте http://localhost:8000/api/docs/ для интерактивной документации.
+
+---
+
+## 🔧 Локальная разработка (без Docker)
+
+### Бэкенд
+
+```bash
+cd backend
+
+# Виртуальное окружение
+python -m venv venv
+venv\Scripts\activate  # Windows
+
+# Установка зависимостей
+pip install -r requirements.txt
+
+# Создание БД
+psql -U postgres -c "CREATE DATABASE guitarstore;"
+
+# Миграции
+python manage.py migrate
+
+# Суперпользователь
+python manage.py createsuperuser
+
+# Генерация данных
+python scripts/seed_data.py 1000000 5000
+
+# Запуск
+python manage.py runserver
+```
+
+### Фронтенд
+
+```bash
+# Sync Gradle в Android Studio
+# Или из командной строки:
+cd android
+gradlew sync
+gradlew assembleDebug
+```
+
+---
+
+## 📊 Производительность
+
+| Операция | Время |
+|---|---|
+| Генерация 1M записей | ~140 сек |
+| Поиск по 1M записей | <100 мс |
+| Пагинация (20 записей) | <50 мс |
+| Фильтрация | <100 мс |
+
+---
+
+## 📄 Документация
+
+- [`backend/README.md`](backend/README.md) — бэкенд документация
+- [`android/BACKEND_INTEGRATION.md`](android/BACKEND_INTEGRATION.md) — интеграция Android
+- [`backend/k8s/README.md`](backend/k8s/README.md) — Kubernetes
+
+---
+
+## 🎓 Учебные цели
+
+Проект демонстрирует:
+- ✅ Fullstack разработку (Backend + Frontend)
+- ✅ REST API дизайн
+- ✅ Работу с PostgreSQL (индексы, полнотекстовый поиск)
+- ✅ Docker контейнеризацию
+- ✅ Kubernetes оркестрацию
+- ✅ MVVM архитектуру на Android
+- ✅ Генерацию больших объёмов данных
+- ✅ Оптимизацию производительности
+
+---
+
+## 📝 Лицензия
+
+MIT
